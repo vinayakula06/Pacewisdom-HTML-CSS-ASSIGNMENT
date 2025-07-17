@@ -22,15 +22,14 @@ To demonstrate fundamental HTML structure and CSS styling concepts by creating t
     -   Demonstration of an `<ol>` (ordered list).
     -   Demonstration of a `<ul>` (unordered list).
 -   **Styling (CSS):** Extra marks for showing usage of different font styles (e.g., `font-weight`, `font-style`, `letter-spacing`, `text-transform`).
-  
-**Deployed Website:**
-- Assignment 1 (Part A): [pacewisdom-assignment-1.netlify.app](https://pacewisdom-assignment-1.netlify.app)
 
 **Part B Requirements (in `assignment_2/index.html`):**
 -   Design a website that visually matches the provided screenshot (from the assignment description).
 -   This implies attention to layout (e.g., columns), colors, font choices (Verdana, sans-serif, bold, italic), spacing, and responsive design (as indicated by the `@media` queries in the provided CSS).
 -   The content should reflect the "Garden Greens Glory" theme.
-
 **How to view the assignments:**
 1.  Navigate to the respective assignment folder (`assignment_1` or `assignment_2`).
 2.  Open the `index.html` file in your web browser.
+**Deployed Website:**
+- Assignment 1 (Part A): [pacewisdom-assignment-1.netlify.app](https://pacewisdom-assignment-1.netlify.app)
+- Assignment 2 (Part B): [pacewisdom-assignment-2.netlify.app](https://pacewisdom-assignment-2.netlify.app)
