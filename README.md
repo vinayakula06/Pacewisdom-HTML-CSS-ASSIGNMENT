@@ -22,6 +22,9 @@ To demonstrate fundamental HTML structure and CSS styling concepts by creating t
     -   Demonstration of an `<ol>` (ordered list).
     -   Demonstration of a `<ul>` (unordered list).
 -   **Styling (CSS):** Extra marks for showing usage of different font styles (e.g., `font-weight`, `font-style`, `letter-spacing`, `text-transform`).
+  
+**Deployed Website:**
+- Assignment 1 (Part A): [pacewisdom-assignment-1.netlify.app](https://pacewisdom-assignment-1.netlify.app)
 
 **Part B Requirements (in `assignment_2/index.html`):**
 -   Design a website that visually matches the provided screenshot (from the assignment description).
