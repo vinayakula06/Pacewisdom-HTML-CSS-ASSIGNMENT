@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS Assignment 1</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #2563eb, #4f46e5);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+
+        header div {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 1.5rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+
+        header span {
+            font-size: 1.125rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        nav {
+            background-color: #1f2937;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav-container {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 1.5rem;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 1.125rem;
+            font-weight: 500;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-links a:hover {
+            color: #93c5fd;
+            background-color: #374151;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            padding: 5px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease-in-out;
+            border-radius: 2px;
+        }
+
+        .menu-toggle.open span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 0;
+            width: 100%;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin: 1.5rem auto;
+        }
+
+        .main-content-wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        section h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+        }
+
+        section h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        p {
+            color: #4b5563;
+            line-height: 1.625;
+        }
+
+        code {
+            background-color: #f3f4f6;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 0.75rem;
+            border: 4px solid #60a5fa;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        button {
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease-in-out;
+            outline: none;
+            border-radius: 0.5rem;
+        }
+
+        button:focus {
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+            border-radius: 0.5rem;
+        }
+
+        .button-blue {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        .button-blue:hover {
+            background-color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        .button-green {
+            background-color: #22c55e;
+            color: white;
+            font-weight: 600;
+            border-radius: 9999px;
+        }
+
+        .button-green:hover {
+            background-color: #16a34a;
+            transform: rotate(3deg);
+        }
+
+        .link-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .link-list li {
+            margin: 0;
+        }
+
+        .link-list a {
+            text-decoration: underline;
+            font-size: 1.125rem;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .link-list a:hover {
+            color: #2563eb;
+        }
+
+        .link-list .blue-link {
+            color: #2563eb;
+        }
+
+        .link-list .purple-link {
+            color: #9333ea;
+        }
+
+        ol, ul {
+            list-style-position: inside;
+            padding-left: 1.25rem;
+            line-height: 1.5;
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+
+        ul {
+            list-style-type: disc;
+        }
+
+        ol li, ul li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+
+        ol li:first-child {
+            font-weight: 700;
+            color: #1d4ed8;
+        }
+
+        ol li:nth-child(2) {
+            font-style: italic;
+            color: #15803d;
+        }
+
+        ol li:last-child {
+            text-transform: uppercase;
+            color: #7e22ce;
+        }
+
+        ul li:first-child {
+            font-weight: 700;
+        }
+
+        ul li:nth-child(2) {
+            font-style: italic;
+        }
+
+        ul li:last-child {
+            color: #dc2626;
+            font-weight: 600;
+        }
+
+        #font-styles-section p {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+
+        #font-styles-section span {
+            display: inline-block;
+        }
+
+        #font-styles-section .normal-text { font-weight: 400; }
+        #font-styles-section .bold-text { font-weight: 700; color: #1f2937; }
+        #font-styles-section .italic-text { font-style: italic; color: #4b5563; }
+        #font-styles-section .light-text { font-weight: 300; color: #6b7280; }
+        #font-styles-section .extrabold-text { font-weight: 800; color: #1d4ed8; }
+        #font-styles-section .wider-spacing-text { letter-spacing: 0.05em; color: #16a34a; }
+        #font-styles-section .uppercase-text { text-transform: uppercase; color: #7e22ce; }
+        #font-styles-section .capitalize-text { text-transform: capitalize; color: #db2777; }
+
+        footer {
+            background-color: #111827;
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: auto;
+            box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+
+        footer div {
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 1.5rem;
+        }
+
+        footer p {
+            font-size: 0.875rem;
+        }
+
+        footer p:last-child {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-section {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+
+            header span {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: calc(100% - 3rem);
+                background-color: #1f2937;
+                position: absolute;
+                top: 100%;
+                left: 1.5rem;
+                padding: 1rem 0;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease-in-out;
+                z-index: 9;
+                border-radius: 0.375rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.75rem 1rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            main {
+                margin: 1rem auto;
+            }
+
+            .main-content-wrapper {
+                padding: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            section h3 {
+                font-size: 1.25rem;
+            }
+
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .link-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #font-styles-section p {
+                font-size: 1rem;
+            }
+
+            header div, nav .nav-container, footer div {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>My First Web Page</h1>
+            <span>Demonstrating HTML & CSS</span>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-links" id="nav-links">
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="main-content-wrapper">
+            <section id="introduction" class="fade-in-section">
+                <h2>Welcome to My HTML Assignment!</h2>
+                <p>
+                    This page demonstrates fundamental HTML elements and the power of CSS styling. We'll explore structural tags like <code>header</code>, <code>nav</code>, <code>main</code>, and <code>footer</code>, along with common content elements.
+                </p>
+            </section>
+
+            <section id="image-section" class="text-center">
+                <h3>An Example Image</h3>
+                <img src="https://superblog.supercdn.cloud/site_cuid_clvc4016q001j13bhaleswmt1/images/12-1717012195121-compressed.jpg"
+                    alt="A green placeholder image"
+                    class="responsive-image">
+                <p>
+                    This image demonstrates the use of the <code>img</code> tag.
+                </p>
+            </section>
+
+            <section id="interactive-elements">
+                <h3>Interactive Elements: Buttons & Links</h3>
+                <div class="button-container">
+                    <button class="button-blue">
+                        Click Me!
+                    </button>
+                    <button class="button-green">
+                        Learn More
+                    </button>
+                </div>
+                <p class="text-center">
+                    These are examples of <code>button</code> tags.
+                </p>
+
+                <h4>Useful Links</h4>
+                <ul class="link-list">
+                    <li>
+                        <a href="https://www.w3schools.com/html/" target="_blank" class="blue-link">
+                            Visit W3Schools HTML
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#header" class="purple-link">
+                            Go to Top (Header)
+                        </a>
+                    </li>
+                </ul>
+                <p class="text-center">
+                    These demonstrate <code>a</code> (anchor) tags for linking.
+                </p>
+            </section>
+
+            <section id="ordered-list-section">
+                <h3>My Top 3 Favorite Things (Ordered List)</h3>
+                <ol>
+                    <li>Learning Web Development</li>
+                    <li>Exploring New Technologies</li>
+                    <li>Solving Challenging Problems</li>
+                </ol>
+                <p>
+                    This is an <code>ol</code> (ordered list) with distinct font styles for each item.
+                </p>
+            </section>
+
+            <section id="unordered-list-section">
+                <h3>Things to Remember (Unordered List)</h3>
+                <ul>
+                    <li>Always close your tags.</li>
+                    <li>Use semantic HTML for better structure.</li>
+                    <li>CSS makes your pages beautiful.</li>
+                    <li>Test your code across browsers.</li>
+                </ul>
+                <p>
+                    This is an <code>ul</code> (unordered list) also demonstrating font styling.
+                </p>
+            </section>
+
+            <section id="font-styles-section">
+                <h3>Demonstrating Font Styles</h3>
+                <p>This is <span class="normal-text">normal</span> text.</p>
+                <p>This is <span class="bold-text">bold</span> text.</p>
+                <p>This is <span class="italic-text">italic</span> text.</p>
+                <p>This is <span class="light-text">light</span> text.</p>
+                <p>This is <span class="extrabold-text">extra bold</span> text with a specific color.</p>
+                <p>This text has <span class="wider-spacing-text">wider letter spacing</span>.</p>
+                <p>This text is <span class="uppercase-text">uppercase</span>.</p>
+                <p>This text is <span class="capitalize-text">capitalized</span>.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <p>
+                &copy; <span id="current-year"></span> My HTML Assignment. All rights reserved.
+            </p>
+            <p>
+                Created for learning purposes.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
