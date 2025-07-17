@@ -1,6 +1,6 @@
 Pacewisdom-HTML-CSS-ASSIGNMENT
 
-This repository contains solutions for the HTML & CSS assignments provided by Pace Wisdom Solutions as part of the Python Upskill Internships: Batch 4.
+This repository contains solutions for the HTML & CSS assignments provided by Pace Wisdom Solutions as part of the Python  Internship.
 
 ---
 
