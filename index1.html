@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Greens Glory</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif; 
+            margin: 0;
+            background-color: #F5F5DC; 
+            color: #333333;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #2E8B57; 
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold; 
+        }
+
+        .header-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .header-links a:hover {
+            text-decoration: underline;
+            color: #dbe4c2; 
+        }
+
+        main {
+            flex-grow: 1;
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #6B8E23; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+
+        .main-text {
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-style: italic; 
+        }
+
+        .columns-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 280px;
+            padding: 15px;
+            border: 1px solid #6B8E23; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            box-sizing: border-box;
+            background-color: white;
+        }
+
+        .column h3 {
+            color: #8FBC8F; 
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold; 
+        }
+
+        .column p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .column p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 15px;
+            }
+
+            header h1 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .header-links {
+                gap: 15px;
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .header-links a {
+                font-size: 13px;
+            }
+
+            main {
+                margin: 15px;
+                padding: 15px;
+            }
+
+            .columns-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .column {
+                min-width: unset;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Garden Greens Glory</h1>
+        <div class="header-links">
+            <a href="#">Sign in</a>
+            <a href="#">Sign up</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-text">
+            <p>
+                Welcome to **Garden Greens Glory**, your ultimate destination for all things healthy and vibrant! We believe in the power of fresh, nutritious vegetables to transform your well-being. Explore our site to discover delicious recipes, essential growing tips, and the many benefits of incorporating greens into your diet.
+            </p>
+        </div>
+
+        <div class="columns-container">
+            <div class="column">
+                <h3>Nutrient Powerhouse</h3>
+                <p>Greens like spinach, kale, and Brussels sprouts are packed with essential vitamins (A, C, K), minerals (iron, calcium), and antioxidants, crucial for boosting immunity and overall health. They support bone strength and vision.</p>
+                <p>Consuming a variety of leafy greens regularly can contribute significantly to a balanced diet, providing fiber for digestive health and aiding in detoxification processes.</p>
+            </div>
+            <div class="column">
+                <h3>Culinary Delights</h3>
+                <p>Transform your meals with versatile greens! From crisp salads and hearty soups to savory stir-fries and vibrant smoothies, greens add incredible flavor and texture. Discover new ways to enjoy them daily.</p>
+                <p>Our recipe section features innovative dishes that make eating your vegetables an enjoyable experience. Explore quick weeknight meals and elaborate dishes perfect for entertaining.</p>
+            </div>
+            <div class="column">
+                <h3>Growing Tips</h3>
+                <p>Start your own vegetable garden today! Growing your greens is a rewarding experience, providing fresh, organic produce right at your fingertips. We offer beginner-friendly tips for successful harvests.</p>
+                <p>Learn about soil preparation, proper watering techniques, pest control, and harvesting methods. Enjoy the satisfaction of cultivating your own nutritious vegetables and contributing to a greener planet.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
