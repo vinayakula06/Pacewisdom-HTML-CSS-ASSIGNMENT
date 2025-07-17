@@ -32,4 +32,4 @@ To demonstrate fundamental HTML structure and CSS styling concepts by creating t
 2.  Open the `index.html` file in your web browser.
 **Deployed Website:**
 - Assignment 1 (Part A): [pacewisdom-assignment-1.netlify.app](https://pacewisdom-assignment-1.netlify.app)
-- Assignment 2 (Part B): [pacewisdom-assignment-2.netlify.app](https://pacewisdom-assignment-2.netlify.app)
+- Assignment 1 (Part B): [pacewisdom-assignment-2.netlify.app](https://pacewisdom-assignment-2.netlify.app)
